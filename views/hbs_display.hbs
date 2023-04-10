@@ -1,0 +1,18 @@
+{{#each allData}}
+    <div class="main-content center-content">
+        <table border = "11" cellspacing="20">
+            <tr><th>ID: {{this._id}}</th></tr>
+            <tr><th>Title: {{this.title}}</th></tr>
+            <tr><th>ISBN: {{this.isbn}}</th></tr>
+            <tr><th>Page Count: {{ this.pageCount}}</th></tr>   
+            <tr><th>Published Date: {{this.publishedDate.$date}}</th></tr>
+            <tr><th><img src="{{this.thumbnailUrl}}"></th></tr>
+            <tr><th>Thumbnail Url: {{this.thumbnailUrl}}</th></tr>
+            <tr><th>Short Description: {{this.shortDescription}}</th></tr>
+            <tr><th>Long Description: {{this.longDescription}}</th></tr>
+            <tr><th>Status: {{this.status}}</th></tr>
+            <tr><th>Authors: {{this.authors}}</th></tr>
+            <tr><th>Categories: {{this.categories}}</th></tr>
+        </table>
+    </div>
+{{/each}}

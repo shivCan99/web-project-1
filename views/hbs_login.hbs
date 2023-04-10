@@ -1,0 +1,11 @@
+<form method="POST" action="/api/auth/login">
+    <input type="text" name="username" placeholder="Enter Username"> <br>
+    <input type="text" name="password" placeholder="Enter Password"> <br>
+    <input type="submit">  <input type="reset"> <br><br>
+    {{#if output}}
+        <p>
+            {{output}} <br>
+            Your Token: <input type="textarea" value={{jwt_token}}>
+        </p>
+    {{/if}} 
+</form>

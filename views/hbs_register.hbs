@@ -1,0 +1,66 @@
+{{!-- <form method="POST" action="/api/profile/add">
+    <input type="text" name="date" placeholder="Enter Sale Date"> <br>
+    <input type="text" name="name" placeholder="Enter Name"> <br>
+    <input type="text" name="tags" placeholder="Tags"> <br>
+    <input type="text" name="price" placeholder="Price"> <br>
+    <input type="text" name="quantity" placeholder="Quantity"> <br>
+    <input type="text" name="storeLocation" placeholder="Store Location"> <br>
+    <input type="text" name="gender" placeholder="Customer Gender"> <br>
+    <input type="text" name="age" placeholder="Customer Age"> <br>
+    <input type="text" name="email" placeholder="Customer Email"> <br>
+    <input type="text" name="satisfaction" placeholder="Customer Satisfaction Rate"> <br>
+    <input type="text" name="couponUsed" placeholder="Coupon Used"> <br>
+    <input type="text" name="purchaseMethod" placeholder="Purchase Method"> <br>
+    <br>
+    <input type="submit">  <input type="reset"> <br><br>
+    {{#if output}}
+        <p>
+            {{output}}
+        </p>
+    {{/if}}
+    {{#if username_already_exists}}
+        <p>
+            {{username_already_exists}}
+        </p>
+    {{/if}}
+</form> --}}
+<form method="POST" action="/api/profile/add">
+    <label for="saleDate">Sale Date:</label>
+    <input type="date" id="saleDate" name="saleDate" required><br><br>
+    
+    <label for="items">Items:</label><br>
+    <input type="text" id="itemName" name="items[0][name]" placeholder="Item Name" required>
+    <input type="text" id="itemTags" name="items[0][tags]" placeholder="Item Tags (comma-separated)">
+    <input type="number" id="itemPrice" name="items[0][price]" placeholder="Item Price" min="0" step="0.01" required>
+    <input type="number" id="itemQuantity" name="items[0][quantity]" placeholder="Item Quantity" min="1" required><br><br>
+    
+    <label for="storeLocation">Store Location:</label>
+    <input type="text" id="storeLocation" name="storeLocation" required><br><br>
+    
+    <label for="customerGender">Customer Gender:</label>
+    <select id="customerGender" name="customer[gender]" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select><br><br>
+    
+    <label for="customerAge">Customer Age:</label>
+    <input type="number" id="customerAge" name="customer[age]" placeholder="Age" min="0" required><br><br>
+    
+    <label for="customerEmail">Customer Email:</label>
+    <input type="email" id="customerEmail" name="customer[email]" placeholder="Email" required><br><br>
+    
+    <label for="customerSatisfaction">Customer Satisfaction:</label>
+    <input type="range" id="customerSatisfaction" name="customer[satisfaction]" min="1" max="10" step="1" value="5" required>
+    
+    <label for="couponUsed">Coupon Used:</label>
+    <input type="checkbox" id="couponUsed" name="couponUsed" value="true"><br><br>
+    
+    <label for="purchaseMethod">Purchase Method:</label>
+    <select id="purchaseMethod" name="purchaseMethod" required>
+      <option value="In-store">In-store</option>
+      <option value="Online">Online</option>
+    </select><br><br>
+    
+    <button type="submit">Submit</button>
+  </form>
